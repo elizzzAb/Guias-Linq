@@ -227,8 +227,60 @@ var medico = listaEmpleados.OfType<Medico>();
 Console.WriteLine("________________________________________________________________________________________________________________________\n");
 Console.WriteLine(medico.Single().nombre);
 
+
 #endregion
 //----------------------------------------------------------------
+#region OrderBy
+var edadA = ListaHabitantes.OrderBy(x => x.Edad);
+var edadAC = from vt in ListaHabitantes orderby vt.Edad select vt;
+foreach (var edad in edadAC)
+{
+    Console.WriteLine("________________________________________________________________________________________________________________________\n");
 
+    Console.WriteLine(edad.datosHabitante());
+}
+#endregion
+//----------------------------------------------------------------
+#region OrderBYDescending()
+/* var listaEdad = ListaHabitantes.OrderByDescending(x => x.Edad);
+foreach (Habitante h in listaEdad) { 
+    Console.WriteLine(h.datosHabitante());
+}
+Console.WriteLine("________________________________________________________________________________________________________________________\n");
+var ListaEdad2 = from h in ListaHabitantes orderby h.Edad descending select h;
+foreach (Habitante h in ListaEdad2)
+{
+    Console.WriteLine(h.datosHabitante());
+}
+*/
+#endregion
+//----------------------------------------------------------------
+#region ThenBy
+var habitantes3 = ListaHabitantes.OrderBy(x => x.Edad).ThenBy(x => x.Nombre);
 
+foreach (var h in habitantes3)
+{
+    Console.WriteLine("________________________________________________________________________________________________________________________\n");
+    Console.WriteLine(h.datosHabitante());
+}
+
+Console.WriteLine("________________________________________________________________________________________________________________________\n");
+
+var lista4 = from h in ListaHabitantes orderby h.Edad, h.Nombre ascending select h;
+
+foreach (var h in lista4)
+{
+    Console.WriteLine("________________________________________________________________________________________________________________________\n");
+    Console.WriteLine(h.datosHabitante());
+}
+
+var habitantes4 = ListaHabitantes.OrderBy(x => x.Edad).ThenByDescending(x => x.Nombre);
+
+foreach (var h in habitantes4)
+{
+    Console.WriteLine("________________________________________________________________________________________________________________________\n");
+    Console.WriteLine(h.datosHabitante());
+}
+
+#endregion
 
