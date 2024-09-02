@@ -8,8 +8,7 @@ using IntroduccionLinq;
 List<Casa> ListaCasas = new List<Casa>();
 List<Habitante> ListaHabitantes = new List<Habitante>();
 #endregion 
-
-
+//----------------------------------------------------------------
 #region listaCasa
 ListaCasas.Add(new Casa
 {
@@ -32,7 +31,7 @@ ListaCasas.Add(new Casa
     Ciudad = "New York"
 });
 #endregion
-
+//----------------------------------------------------------------
 #region ListaHabitante
 ListaHabitantes.Add(new Habitante
 {
@@ -91,7 +90,7 @@ ListaHabitantes.Add(new Habitante
     IdCasa = 1
 });
 #endregion
-
+//----------------------------------------------------------------
 #region SentenciasLinQ
 IEnumerable<Habitante> ListaEdad = from ObjetoProvicional //indica el inicio de la consulta LinQ
                                    in ListaHabitantes
@@ -120,8 +119,7 @@ foreach (Habitante h in listaCasaGothan)
 }
 
 #endregion
-
-//----------------------------------------------------------------?
+//----------------------------------------------------------------
 #region FirsthAndFirsthOrDefault
 
 //Console.WriteLine("----------------------------------------------------------------------------------------------");
@@ -146,6 +144,22 @@ foreach (Habitante h in listaCasaGothan)
 //}
 //Console.WriteLine("existe !Si existe!");
 #endregion
+//----------------------------------------------------------------
+#region Last
+Casa ultimaCasa = ListaCasas.Last(temp => temp.Id > 1);
+Console.WriteLine(ultimaCasa.dameDatosCasa());
+Console.WriteLine("_____________________________________________________");
+var h1 = (from objHabitante in ListaHabitantes where objHabitante.Edad > 60 select objHabitante)
+    .LastOrDefault();
+if (h1 == null)
+{
+    Console.WriteLine("Algo fallo");
+    return;
+}
+Console.WriteLine(h1.datosHabitante());
+#endregion
+//----------------------------------------------------------------
+
 
 
 
