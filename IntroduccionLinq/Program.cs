@@ -104,7 +104,7 @@ foreach (Habitante objetoProcicional2 in ListaEdad)
 }
 
 
-//Estructura básica de un Join:
+//Estructura básica de un 'Join':
 //El Join buscara donde las llaves sean iguales,
 //al cumplirse la condición inicia la revisión de la clausula where. 
 
@@ -120,4 +120,32 @@ foreach (Habitante h in listaCasaGothan)
 }
 
 #endregion
+
+//----------------------------------------------------------------?
+#region FirsthAndFirsthOrDefault
+
+//Console.WriteLine("----------------------------------------------------------------------------------------------");
+//var primeraCasa = ListaCasas.First(); //esto no es linQ es  una fucnin de los Ienumarable
+//Console.WriteLine(primeraCasa.dameDatosCasa());
+
+//Habitante personaEdad = (from variableTemporalHabitante
+//in ListaHabitantes
+//                         where variableTemporalHabitante.Edad > 25
+//                         select variableTemporalHabitante).First();
+//Console.WriteLine(personaEdad.datosHabitante());
+
+////Mismo pero con Lambda:
+//var Habitante1 = ListaHabitantes.First(objectTemp => objectTemp.Edad > 25);
+//Console.WriteLine(Habitante1.datosHabitante());
+
+//Casa CasaConFirsthOrDedault = ListaCasas.FirstOrDefault(vCasa => vCasa.Id > 200);
+//if (CasaConFirsthOrDedault == null)
+//{
+//    Console.WriteLine("No existe !No hay!");
+//    return;
+//}
+//Console.WriteLine("existe !Si existe!");
+#endregion
+
+
 
