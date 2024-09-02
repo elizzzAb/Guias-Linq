@@ -8,5 +8,6 @@ namespace IntroduccionLinq
 {
     internal class Empleado
     {
+        public string nombre {  get; set; } 
     }
 }

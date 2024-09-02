@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace IntroduccionLinq
 {
-    internal class Enfermero
+    internal class Enfermero : Empleado
     {
+        public string nombre {  get; set; } 
     }
 }
